@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Ivy Streams</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    /> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  </head>
+  <body>
+    <div class="clock">
+      <li></li>
+      <li></li>
+      <li></li>
+    </div>
+
+    <div id="stream-wrapper">
+      <div id="video-wrapper">
+        <video id="local-stream" autoplay muted></video>
+      </div>
+      <audio id="local-audio" autoplay muted></audio>
+
+      <div id="toggle-btns-wrapper">
+        <button id="mic-btn">Mic On</button>
+        <button id="camera-btn">Camera on</button>
+      </div>
+    </div>
+
+    <!-- <div id="note-wrapper">
+      <div id="note">
+        <div id="note-header">
+          
+          <div class="card">
+            <h2>Notes</h2>
+          </div>
+          <button id="close-btn">X</button>
+        </div>
+        <div id="note-body"></div>
+      </div>
+      <div id="note-input"></div>
+
+      <div id="note-controls">
+          <input type="text" id="note-input">
+          <button id="add-btn">Add</button>
+      </div>
+    </div> -->
+
+    <div class="note container" id="note">
+      <h1 style="color: #fff">Notes</h1>
+      <button class="btn">Create</button>
+      <div class="notes-container">
+        <!-- <p contenteditable="true" class="input-box">
+          <img src="" alt="">
+        </p> -->
+      </div>
+    </div>
+
+    <script src="note.js"></script>
+    <script src="clock.js"></script>
+    <script src="streaming.js" type="module"></script>
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script> -->
+  </body>
+</html>
