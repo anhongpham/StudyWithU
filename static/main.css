@@ -44,34 +44,50 @@ body {
   margin: 0;
   padding: 0;
   border-radius: 5px;
-  background: #e0e0e0;
-  box-shadow: 5px 5px 10px #aaa inset;
+  /* background: rgb(224, 224, 224,0.5); */
+  box-shadow: 0 0 15px rgba(0,0,0,0.3) inset;
 }
 
 #toggle-btns-wrapper {
-  margin-left: 72.5%;
+  margin-left: 74.5%;
   margin-right: 0;
   margin-bottom: 0;
   margin-top: 0.5em;
   padding: 0;
 }
 
-#device-btn {
-  border-radius: 10px;
+#toggle-btns-wrapper button {
+  color: #fff;
+  background-color: rgb(99, 99, 99,0.3);
+  /* padding: 10px 20px;
+  font-size: 16px; */
+  cursor: pointer;
 }
 
-#device-btn:active {
-  background-color: #6c6c6c;
+#toggle-btns-wrapper button:hover {
+  background-color: rgb(99, 99, 99,0.5);
+  cursor: pointer;
 }
 
 #mic-btn {
   border-radius: 10px;
   width: 150px;
   padding: 10px;
+  background-color: rgb(99, 99, 99,0.3);
 }
 
 #mic-btn:active {
-  background-color: #6c6c6c;
+  background-color: rgb(99, 99, 99,0.9);
+}
+
+
+#device-btn {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#device-btn:active {
+  background-color: rgb(99, 99, 99, 0.9);
 }
 
 .video-container {
@@ -85,7 +101,7 @@ body {
   width: 100%;
 }
 
-button {
+/* button {
   border: none;
   background-color: cadetblue;
   color: #fff;
@@ -93,7 +109,7 @@ button {
   font-size: 16px;
   margin: 2px;
   cursor: pointer;
-}
+} */
 
 #stream-controls {
   display: none;
@@ -109,7 +125,7 @@ button {
 }
 
 /* CLOCK */
-@property --seconds {
+/* @property --seconds {
   syntax: "<integer>";
   initial-value: 0;
   inherits: false;
@@ -123,7 +139,7 @@ button {
   syntax: "<integer>";
   initial-value: 0;
   inherits: false;
-}
+} */
 
 .clock-wrapper {
   /* display: flex;
@@ -138,94 +154,43 @@ button {
   width: fit-content;
 }
 
-.clock-wrapper .btn {
-  border-radius: 10px;
-  margin: 5px 8px;
-  padding: 6px 8px;
-  /* background-color: rgb(66, 66, 66, 0.8); */
-}
-
-.btn-start {
-  background-color: rgb(0, 128, 0, 0.8);
-}
-
-.btn-stop {
-  background-color: ;
-}
-
 .clock {
-  all: unset;
   background: rgb(53, 53, 53, 0.5);
-  display: grid;
-  font-size: 2em;
-  font-variant-numeric: tabular-nums;
+  font-size: 50px;
   grid-auto-flow: column;
   inline-size: min-content;
-  padding: 10px;
-  /* margin-left: 10px;
-  margin-top: 10px; */
   border-radius: 10px;
-
-  & li {
-    color: #fff;
-    font-size: 50px;
-    list-style: none;
-    &:nth-of-type(1) {
-      animation: hours 86400s steps(24, end) infinite;
-      animation-delay: var(--delay-hours, 0s);
-      counter-reset: hours var(--hours);
-      &::after {
-        content: counter(hours, decimal-leading-zero) " ";
-      }
-    }
-    &:nth-of-type(2) {
-      animation: minutes 3600s steps(60, end) infinite;
-      animation-delay: var(--delay-minutes, 0s);
-      counter-reset: minutes var(--minutes);
-      &::before {
-        content: ":";
-      }
-      &::after {
-        content: counter(minutes, decimal-leading-zero) " ";
-      }
-    }
-    &:nth-of-type(3) {
-      animation: seconds 60s steps(60, end) infinite;
-      animation-delay: var(--delay-seconds, 0s);
-      counter-reset: seconds var(--seconds);
-      &::before {
-        content: ":";
-      }
-      &::after {
-        content: counter(seconds, decimal-leading-zero) " ";
-      }
-    }
-  }
+  display: grid;
+  padding: 0 10px;
+  color: #fff;
+  font-style: digital;
+  box-shadow: 0 0 5px rgba(0,0,0,0.7);
 }
 
-@keyframes hours {
-  from {
-    --hours: 0;
-  }
-  to {
-    --hours: 24;
-  }
+#stopwatch button:first-of-type {
+  margin-top: 15px;
 }
-@keyframes minutes {
-  from {
-    --minutes: 0;
-  }
-  to {
-    --minutes: 60;
-  }
+
+#stopwatch button:last-child{
+    background-color: #ae7617;
 }
-@keyframes seconds {
-  from {
-    --seconds: 0;
-  }
-  to {
-    --seconds: 60;
-  }
+
+.clock-wrapper button {
+  border-radius: 10px;
+  margin: 5px 9px;
+  padding: 6px 10px;
+  display: inline-block;
+  background-color: rgb(99, 99, 99,0.3);
+  font-size: 25px;
+} 
+
+.clock-wrapper button:hover {
+  background-color: rgb(99, 99, 99,0.5);
+  cursor: pointer;
+}
+
+.clock-wrapper button:active {
+  background-color: rgb(99, 99, 99,0.9);
 }
 
 /* NEKO GIF */
@@ -524,30 +489,6 @@ form button{
     font-size: 17px;
   }
 }
-
-/* body p:after {
-  transform: translatey(0px);
-  animation: float2 5s ease-in-out infinite;
-  content: ".";
-  font-weight: bold;
-  // -webkit-text-stroke: 0.5px $color-green; 
-  -webkit-text-fill-color: #ece5ce;
-  // border: 1px solid $color-green; 
-  text-shadow: 22px 22px #83af9b;
-  text-align: left;
-  font-size: 55px;
-  width: 55px;
-  height: 11px;
-  line-height: 30px;
-  border-radius: 11px;
-  background-color: #ece5ce;
-  position: absolute;
-  display: block;
-  bottom: -30px;
-  left: 0;
-  box-shadow: 22px 22px #83af9b;
-  z-index: -2;
-} */
 
 @keyframes float {
   0% {

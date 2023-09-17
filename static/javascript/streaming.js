@@ -5,7 +5,7 @@ const micBtn = document.getElementById("mic-btn");
 // When the micBtn is clicked, change the background color to red, and change the text to "Stop Recording". When the micBtn is clicked again, change the background color to green, and change the text to "Start Recording".
 micBtn.addEventListener("click", () => {
   if (micBtn.style.backgroundColor === "red") {
-    micBtn.style.backgroundColor = "cadetblue";
+    micBtn.style.backgroundColor = "rgb(99, 99, 99,0.3)";
     micBtn.innerText = "Talk to Neko";
   } else {
     micBtn.style.backgroundColor = "red";
@@ -22,6 +22,12 @@ let recordedChunks = [];
 faceapi.nets.tinyFaceDetector.loadFromUri("./models");
 faceapi.nets.faceLandmark68Net.loadFromUri("./models");
 faceapi.nets.faceExpressionNet.loadFromUri("./models");
+
+// if (enable_video && enable_audio) {
+//   micBtn.style.pointerEvents = "auto";
+// } else {
+//   micBtn.style.pointerEvents = "none";
+// }
 
 const setStream = async (enableVideo, enableAudio) => {
   try {
